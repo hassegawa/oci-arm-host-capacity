@@ -14,7 +14,7 @@ RUN apt update && apt install -y git php-cli php-curl php-xml jq nano unzip curl
     HASH=`curl -sS https://composer.github.io/installer.sig` && \
     php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
-    cd oci-arm-host-capacity && \
+    cd /app/oci-arm-host-capacity && \
     composer update && \
     composer install && \
     chown ubuntu:ubuntu /app/oci-arm-host-capacity
